@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky Engineer Calc</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="calc">
+    <div class="display" id="display">0</div>
+
+    <div class="buttons">
+        <button class="eng" onclick="sendOp('sin')">sin</button>
+        <button class="eng" onclick="sendOp('cos')">cos</button>
+        <button class="eng" onclick="sendOp('tan')">tan</button>
+        <button class="eng" onclick="sendOp('log')">log</button>
+        <button class="special" onclick="clearCalc()">AC</button>
+
+        <button class="eng" onclick="sendOp('sqrt')">√</button>
+        <button class="eng" onclick="addNum('3.14159')">π</button>
+        <button class="eng" onclick="addNum('2.71828')">e</button>
+        <button class="eng" onclick="addNum('(')">(</button>
+        <button class="op" onclick="addNum('/')">÷</button>
+
+        <button class="num" onclick="addNum(7)">7</button>
+        <button class="num" onclick="addNum(8)">8</button>
+        <button class="num" onclick="addNum(9)">9</button>
+        <button class="eng" onclick="addNum(')')">)</button>
+        <button class="op" onclick="addNum('*')">×</button>
+
+        <button class="num" onclick="addNum(4)">4</button>
+        <button class="num" onclick="addNum(5)">5</button>
+        <button class="num" onclick="addNum(6)">6</button>
+        <button class="eng" onclick="sendOp('square')">x²</button>
+        <button class="op" onclick="addNum('-')">−</button>
+
+        <button class="num" onclick="addNum(1)">1</button>
+        <button class="num" onclick="addNum(2)">2</button>
+        <button class="num" onclick="addNum(3)">3</button>
+        <button class="eng" onclick="addNum('^')">xʸ</button>
+        <button class="op" onclick="addNum('+')">+</button>
+
+        <button class="num zero" onclick="addNum(0)">0</button>
+        <button class="num" onclick="addNum('.')">.</button>
+        <button class="equals" onclick="calculate()">=</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
