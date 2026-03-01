@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  kalka-app:
+    image: lemeshev/kalka:latest
+    ports:
+      - "3000:3000"
+    restart: always
+
+  # Цей малюк буде перевіряти Docker Hub кожні 5 хвилин
+  watchtower:
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 300 --cleanupс
