@@ -1,14 +1,16 @@
 services:
-  kalka-app:
+
+  kalka:
     image: lemeshev/kalka:latest
     ports:
       - "3000:3000"
     restart: always
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
 
-  watchtower:
+  updater:
     image: containrrr/watchtower
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    # Я прибрав 'version', виправив '--cleanup' і додав '--debug', 
-    # щоб ти бачив кожен крок перевірки в логах
-    command: --interval 30 --cleanup --debug
+    command: --interval 60 --cleanup --label-enable
+    restart: always
