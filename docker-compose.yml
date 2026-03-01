@@ -18,6 +18,8 @@ services:
     container_name: watchtower_updater
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-
+    environment:
+      # Цей рядок каже Watchtower використовувати сучасну версію API
+      - DOCKER_API_VERSION=1.44
     command: --interval 60 --cleanup --label-enable
     restart: always
