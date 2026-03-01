@@ -9,11 +9,9 @@ app.post('/calculate', (req, res) => {
     const { action, value, expression } = req.body;
     let finalExpression = "";
 
-    // Якщо прийшла конкретна дія (sqrt, sin тощо)
     if (action && value) {
         finalExpression = `${action}(${value})`;
     } else {
-        // Якщо прийшов звичайний вираз (наприклад, з кнопки "=")
         finalExpression = expression || value;
     }
 
