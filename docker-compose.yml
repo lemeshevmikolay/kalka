@@ -1,16 +1,23 @@
-services:
+version: '3.8'
 
+services:
   kalka:
     image: lemeshev/kalka:latest
+    container_name: kalka_app
     ports:
       - "3000:3000"
+    volumes:
+
+      - ./data:/app/data
     restart: always
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
 
   updater:
     image: containrrr/watchtower
+    container_name: watchtower_updater
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+
     command: --interval 60 --cleanup --label-enable
     restart: always

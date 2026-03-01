@@ -3,11 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kalka_app</title>
+    <title>Kalka App Pro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="calc">
+
+<div id="auth-container" class="auth-box">
+    <div class="auth-tabs">
+        <button id="tab-login" class="active" onclick="switchAuthMode('login')">Вхід</button>
+        <button id="tab-register" onclick="switchAuthMode('register')">Реєстрація</button>
+    </div>
+
+    <h2 id="auth-title">З поверненням!</h2>
+
+    <div id="auth-form">
+        <input type="text" id="username-input" placeholder="Твій нікнейм">
+
+        <input type="text" id="phone-input" class="hidden" placeholder="+380XXXXXXXXX">
+
+        <input type="password" id="password-input" placeholder="Пароль">
+
+        <button id="auth-submit-btn" onclick="handleAuthSubmit()">Ввійти</button>
+    </div>
+
+    <p id="error-msg" class="hidden"></p>
+</div>
+
+<div id="calc-container" class="calc hidden">
+    <div class="user-info">
+        <div class="user-details">
+            <span id="user-label"></span>
+            <button class="logout-link" onclick="logout()">🚪 Вихід</button>
+        </div>
+        <button class="history-trigger" onclick="toggleHistory()">📜 Профіль</button>
+    </div>
+
+    <div id="status-badge" class="hidden">Аккаунт обмежено</div>
+
     <div class="display" id="display">0</div>
 
     <div class="buttons">
@@ -44,6 +76,24 @@
         <button class="num zero" onclick="addNum(0)">0</button>
         <button class="num" onclick="addNum('.')">.</button>
         <button class="equals" onclick="calculate()">=</button>
+    </div>
+</div>
+
+<div id="history-panel" class="history-panel">
+    <div class="history-header">
+        <h3>Мій профіль</h3>
+        <button class="close-btn" onclick="toggleHistory()">×</button>
+    </div>
+
+    <div class="user-stats-top">
+        <p>👤 Ім'я: <b id="stat-name">...</b></p>
+        <p>📱 Тел: <b id="stat-phone">...</b></p>
+        <p>📅 Реєстрація: <b id="stat-date">...</b></p>
+        <p>📈 Операцій: <b id="stat-ops">0</b></p>
+    </div>
+
+    <div class="history-title">Історія обчислень</div>
+    <div id="history-content" class="history-list scrollable">
     </div>
 </div>
 
