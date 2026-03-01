@@ -18,7 +18,7 @@ app.post('/calculate', (req, res) => {
     }
 
     try {
-        console.log(`exec: ${finalExpression}`);
+        console.log(`exec calculation: ${finalExpression}`);
         const result = evaluate(finalExpression);
 
         // Повертаємо у твоєму форматі
