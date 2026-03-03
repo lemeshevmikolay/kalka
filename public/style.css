@@ -1,6 +1,6 @@
 /* --- БАЗОВІ НАЛАШТУВАННЯ ТА ФОН --- */
 body {
-    background: linear-gradient(180deg, #05f53d 0%, #3e07e0 100%);
+    background: linear-gradient(180deg, #f14405 0%, #3e07e0 100%);
     display: flex;
     justify-content: center;
     align-items: center;
